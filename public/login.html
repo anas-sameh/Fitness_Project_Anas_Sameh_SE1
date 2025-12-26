@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Login</title>
+
+  <link rel="stylesheet" href="css/login.css">
+  <link rel="stylesheet" href="css/home.css">
+
+  <link rel="stylesheet" href="css/notifications.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+
+<body>
+
+<!-- ===== NAVBAR ===== -->
+    <nav class="navbar">
+      <div class="logo">
+        <img src="img/logo.webp" alt="logo" />
+      </div>
+
+      <ul class="nav-links">
+        <li><a href="home.html">Home</a></li>
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="courses.html">All Course</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+
+      <div class="nav-right">
+        <div class="nav-icons">
+          <a href="favourites.html" class="nav-icon" title="Favourites">
+            <i class="fas fa-heart"></i>
+          </a>
+          <a href="profile.html" class="nav-icon" title="Profile">
+            <i class="fas fa-user"></i>
+          </a>
+        </div>
+        <div class="nav-btn">
+          <a href="login.html">Login</a>
+        </div>
+      </div>
+    </nav>
+
+<!-- ===== HERO ===== -->
+<section class="hero">
+  <div class="hero-content">
+    <h1>Login</h1>
+    <p><a href="home.html">Home</a> // Login</p>
+  </div>
+</section>
+
+<!-- ===== LOGIN FORM ===== -->
+<section class="container1">
+  <div class="form-card">
+
+    <h2>Login <span>Now</span></h2>
+
+    <form id="loginForm" novalidate>
+
+      <div class="form-group">
+        <input type="email" id="email" placeholder="Email" required />
+      </div>
+
+      <div class="form-group">
+        <input type="password" id="password" placeholder="Password" required />
+      </div>
+
+      <div class="forgot-password-link">
+        <a href="#" id="forgotPasswordLink">Forgot Password?</a>
+      </div>
+
+      <button type="submit" class="btn-primary">Login</button>
+
+      <p class="login-text">
+        Don't have an account?
+        <a href="register.html">Register here</a>
+      </p>
+
+    </form>
+  </div>
+</section>
+
+<!-- ===== FORGET PASSWORD MODAL ===== -->
+<div id="forgetPasswordModal" class="forget-password-modal">
+  <div class="modal-content">
+    <span class="close-modal">&times;</span>
+
+    <!-- STEP 1 -->
+    <div class="modal-step" id="step1">
+      <h2>Forgot Password?</h2>
+      <p>Enter your email to receive OTP</p>
+      <input type="email" id="forgetEmail" placeholder="Email">
+      <button type="button" class="btn-primary" id="sendOTPBtn">Send OTP</button>
+    </div>
+
+    <!-- STEP 2 -->
+    <div class="modal-step" id="step2" style="display:none;">
+      <h2>Enter OTP</h2>
+      <input type="text" id="otpCode" maxlength="4" placeholder="OTP">
+      <button type="button" class="btn-primary" id="verifyOTPBtn">Verify</button>
+    </div>
+
+    <!-- STEP 3 -->
+    <div class="modal-step" id="step3" style="display:none;">
+      <h2>Reset Password</h2>
+      <input type="password" id="newPassword" placeholder="New Password">
+      <input type="password" id="confirmNewPassword" placeholder="Confirm Password">
+      <button type="button" class="btn-primary" id="resetPasswordBtn">Reset</button>
+    </div>
+
+  </div>
+</div>
+
+<!-- ===== SCRIPTS ===== -->
+<script src="js/login.js"></script>
+<script src="./js/utils.js"></script>
+<script src="./js/auth.js"></script>
+
+</body>
+</html>

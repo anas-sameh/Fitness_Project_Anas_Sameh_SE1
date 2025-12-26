@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>My Profile</title>
+    <link rel="stylesheet" href="./css/profile.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    />
+
+    <link rel="stylesheet" href="css/home.css" />
+  </head>
+  <body>
+    <nav class="navbar">
+      <div class="logo">
+        <img src="img/logo.webp" alt="logo" />
+      </div>
+
+      <ul class="nav-links">
+        <li><a href="home.html" class="active">Home</a></li>
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="courses.html">All Course</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+
+      <div class="nav-right">
+        <div class="nav-icons">
+          <a href="favourites.html" class="nav-icon" title="Favourites">
+            <i class="fas fa-heart"></i>
+          </a>
+          <a href="profile.html" class="nav-icon" title="Profile">
+            <i class="fas fa-user"></i>
+          </a>
+        </div>
+        <div class="nav-btn">
+          <a href="login.html">Login</a>
+        </div>
+      </div>
+    </nav>
+    <!-- HERO SECTION -->
+    <section class="hero">
+      <div class="hero-content">
+        <h1 style="user-select: none">Profile</h1>
+        <p>
+          <a href="home.html">Home</a> //
+          <span style="user-select: none">Profile</span>
+        </p>
+      </div>
+        
+    </section>
+    <section class="profile">
+      <!-- Profile Header -->
+      <div class="profile-header">
+        <div class="profile-left">
+          <img src="./img/profile.jpeg" alt="User" />
+          <div class="profile-info">
+            <h2>Abdelwahab Ahmed</h2>
+            <p>Frontend Developer</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Favorite Courses -->
+      <div class="profile-courses">
+        <h3>My Courses</h3>
+
+        <div class="courses-grid"></div>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <div class="footer-container">
+        <!-- Newsletter -->
+        <div class="footer-col newsletter">
+          <h3>Subscribe Newsletter</h3>
+          <p>
+            Lorem Ipsum has been them an<br />
+            industry printer took a galley make<br />
+            book.
+          </p>
+
+          <input type="email" placeholder="Enter email" />
+          <button>Subscribe Now</button>
+        </div>
+
+        <!-- Courses -->
+        <div class="footer-col">
+          <h3>All Courses</h3>
+          <ul>
+            <li>Daily Exercise</li>
+            <li>Find Your Balance</li>
+            <li>Personal Program</li>
+            <li>Natural Process</li>
+            <li>Immune System</li>
+            <li>Gives You Energy</li>
+          </ul>
+        </div>
+
+        <!-- Help Links -->
+        <div class="footer-col">
+          <h3>Help Links</h3>
+          <ul>
+            <li>Privacy Policy</li>
+            <li>Discussion</li>
+            <li>Terms & Conditions</li>
+            <li>Customer Support</li>
+            <li>Course FAQ’s</li>
+            <li>Online Classes</li>
+          </ul>
+        </div>
+
+        <!-- Opening Hours -->
+        <div class="footer-col">
+          <h3>Opening Hours</h3>
+          <ul class="hours">
+            <li>Mon-Fri: 9 AM – 6 PM</li>
+            <li>Saturday: 9 AM – 4 PM</li>
+            <li>Sunday: Closed</li>
+          </ul>
+
+          <h3 class="mt">Location</h3>
+          <p>
+            176 W street name, New<br />
+            York, NY 10014
+          </p>
+        </div>
+      </div>
+
+      <!-- Bottom Bar -->
+      <div class="footer-bottom">
+        <p>© 2026 <span>Nutras</span> Made with ❤ by Abdelwahab</p>
+        <div class="footer-links">
+          <a href="#">Terms of Service</a>
+          <a href="#">Privacy Policy</a>
+          <a href="#">Sitemap</a>
+          <a href="#">Security</a>
+        </div>
+      </div>
+    </footer>
+
+    <script src="./js/utils.js"></script>
+    <script src="./js/auth.js"></script>
+    <script src="js/profile.js"></script>
+  </body>
+</html>

@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>My Favourites</title>
+    <link rel="stylesheet" href="css/home.css" />
+    <link rel="stylesheet" href="./css/favourites.css" />
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    />
+
+    <style>
+      .course-img {
+        position: relative;
+        display: block;
+        overflow: hidden;
+      }
+
+      .course-img img {
+        display: block;
+        width: 100%;
+        height: auto;
+      }
+
+      .favourite-btn {
+        position: absolute;
+        top: 12px;
+        right: 12px;
+        background: rgba(0, 0, 0, 0.5);
+        border: none;
+        border-radius: 50%;
+        width: 40px;
+        height: 40px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        z-index: 10;
+        padding: 0;
+      }
+
+      .favourite-btn:hover {
+        background: rgba(0, 0, 0, 0.8);
+        transform: scale(1.1);
+      }
+
+      .favourite-btn .heart-icon {
+        font-size: 20px;
+        color: #fff;
+        transition: all 0.3s ease;
+      }
+
+      .favourite-btn.active .heart-icon {
+        color: #ff0000;
+      }
+    </style>
+  </head>
+  <body>
+    <nav class="navbar">
+      <div class="logo">
+        <img src="img/logo.webp" alt="logo" />
+      </div>
+
+      <ul class="nav-links">
+        <li><a href="home.html" class="active">Home</a></li>
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="courses.html">All Course</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+
+      <div class="nav-right">
+        <div class="nav-icons">
+          <a href="favourites.html" class="nav-icon" title="Favourites">
+            <i class="fas fa-heart"></i>
+          </a>
+          <a href="profile.html" class="nav-icon" title="Profile">
+            <i class="fas fa-user"></i>
+          </a>
+        </div>
+        <div class="nav-btn">
+          <a href="login.html">Login</a>
+        </div>
+      </div>
+    </nav>
+
+    <section class="profile">
+      <!-- HERO SECTION -->
+      <section class="hero">
+        <div class="hero-content">
+          <h1 style="user-select: none">Favourites</h1>
+          <p>
+            <a href="home.html">Home</a> //
+            <span style="user-select: none">Favourites</span>
+          </p>
+        </div>
+          
+      </section>
+
+      <!-- Favorite Courses -->
+      <div class="profile-courses">
+        <h3>My Favorite Courses</h3>
+
+        <div class="courses-grid">
+          <!-- Course Card -->
+          <div class="course-card">
+            <div class="course-img">
+              <img src="./img/courses-7.webp" />
+              <span class="price">$49</span>
+            </div>
+
+            <div class="course-info">
+              <span class="author">By John Doe</span>
+              <h4>Complete JavaScript Course</h4>
+
+              <div class="meta">
+                <span>12 Lessons</span>
+                <span>3h 20m</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Copy Card -->
+          <div class="course-card">
+            <div class="course-img">
+              <img src="./img/courses-4.webp" />
+              <span class="price">$39</span>
+            </div>
+
+            <div class="course-info">
+              <span class="author">By Sarah Lee</span>
+              <h4>UI / UX Design Basics</h4>
+
+              <div class="meta">
+                <span>10 Lessons</span>
+                <span>2h 10m</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <div class="footer-container">
+        <!-- Newsletter -->
+        <div class="footer-col newsletter">
+          <h3>Subscribe Newsletter</h3>
+          <p>
+            Lorem Ipsum has been them an<br />
+            industry printer took a galley make<br />
+            book.
+          </p>
+
+          <input type="email" placeholder="Enter email" />
+          <button>Subscribe Now</button>
+        </div>
+
+        <!-- Courses -->
+        <div class="footer-col">
+          <h3>All Courses</h3>
+          <ul>
+            <li>Daily Exercise</li>
+            <li>Find Your Balance</li>
+            <li>Personal Program</li>
+            <li>Natural Process</li>
+            <li>Immune System</li>
+            <li>Gives You Energy</li>
+          </ul>
+        </div>
+
+        <!-- Help Links -->
+        <div class="footer-col">
+          <h3>Help Links</h3>
+          <ul>
+            <li>Privacy Policy</li>
+            <li>Discussion</li>
+            <li>Terms & Conditions</li>
+            <li>Customer Support</li>
+            <li>Course FAQ’s</li>
+            <li>Online Classes</li>
+          </ul>
+        </div>
+
+        <!-- Opening Hours -->
+        <div class="footer-col">
+          <h3>Opening Hours</h3>
+          <ul class="hours">
+            <li>Mon-Fri: 9 AM – 6 PM</li>
+            <li>Saturday: 9 AM – 4 PM</li>
+            <li>Sunday: Closed</li>
+          </ul>
+
+          <h3 class="mt">Location</h3>
+          <p>
+            176 W street name, New<br />
+            York, NY 10014
+          </p>
+        </div>
+      </div>
+
+      <!-- Bottom Bar -->
+      <div class="footer-bottom">
+        <p>© 2026 <span>Nutras</span> Made with ❤ by Abdelwahab</p>
+        <div class="footer-links">
+          <a href="#">Terms of Service</a>
+          <a href="#">Privacy Policy</a>
+          <a href="#">Sitemap</a>
+          <a href="#">Security</a>
+        </div>
+      </div>
+    </footer>
+    <script src="./js/utils.js"></script>
+    <script src="./js/auth.js"></script>
+    <script src="js/favourites.js"></script>
+  </body>
+</html>

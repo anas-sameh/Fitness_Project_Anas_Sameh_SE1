@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Course Details</title>
+    <link rel="stylesheet" href="./css/coursedetails.css" />
+    <link rel="stylesheet" href="css/home.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    />
+    <style>
+      /* Simple page title */
+      .page-title {
+        text-align: center;
+        font-size: 28px;
+        margin: 22px 0;
+        color: #222;
+      }
+
+      /* Constrain course image to avoid pixelation and keep aspect ratio */
+      .course-video {
+        display: flex;
+        justify-content: center;
+      }
+      .course-video img {
+        max-width: 500px; /* smaller size to avoid pixelation */
+        width: 100%;
+        height: auto;
+        object-fit: cover;
+        border-radius: 8px;
+        display: block;
+        image-rendering: -webkit-optimize-contrast;
+        image-rendering: crisp-edges;
+        filter: blur(0.3px);
+      }
+
+      /* Top row: sidebar and image side by side */
+      .course-top-wrapper {
+        display: flex;
+        gap: 30px;
+        max-width: 1200px;
+        margin: 0 auto 30px;
+        padding: 0 20px;
+      }
+
+      .course-sidebar {
+        flex: 0 0 300px;
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+      }
+
+      .course-right-image {
+        flex: 1;
+        display: flex;
+        justify-content: center;
+      }
+
+      /* Bottom section: full-width details */
+      .course-details-section {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 30px 20px;
+        width: 100%;
+      }
+
+      /* Mobile responsive */
+      @media (max-width: 768px) {
+        .course-top-wrapper {
+          flex-direction: column;
+        }
+        .course-sidebar {
+          flex: 1;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <nav class="navbar">
+      <div class="logo">
+        <img src="img/logo.webp" alt="logo" />
+      </div>
+
+      <ul class="nav-links">
+        <li><a href="home.html" class="active">Home</a></li>
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="courses.html">All Course</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+
+      <div class="nav-right">
+        <div class="nav-icons">
+          <a href="favourites.html" class="nav-icon" title="Favourites">
+            <i class="fas fa-heart"></i>
+          </a>
+          <a href="profile.html" class="nav-icon" title="Profile">
+            <i class="fas fa-user"></i>
+          </a>
+        </div>
+        <div class="nav-btn">
+          <a href="login.html">Login</a>
+        </div>
+      </div>
+    </nav>
+    <h1 class="page-title">Course Details</h1>
+
+    <!-- TOP: Sidebar + Image side by side -->
+    <div class="course-top-wrapper">
+      <!-- LEFT SIDEBAR -->
+      <aside class="course-sidebar">
+        <div class="price-box">
+          <h3 id="coursePrice">$0</h3>
+        </div>
+
+        <ul class="course-meta">
+          <li>
+            <span>Instructor</span><strong id="courseInstructor">-</strong>
+          </li>
+          <li><span>Duration</span><strong id="courseDuration">-</strong></li>
+          <li><span>Lectures</span><strong id="courseLectures">-</strong></li>
+          <li><span>Level</span><strong>Intermediate</strong></li>
+          <li><span>Language</span><strong>English</strong></li>
+          <li><span>Certificate</span><strong>Yes</strong></li>
+        </ul>
+
+        <a
+          href="#"
+          class="enroll-btn"
+          id="enrollBtn"
+          onclick="enrollInCourse(event)"
+          >Enroll Now</a
+        >
+
+        <div class="share">
+          <p>Share Course:</p>
+          <div class="social">
+            <a href="#">f</a>
+            <a href="#">t</a>
+            <a href="#">in</a>
+            <a href="#">p</a>
+          </div>
+        </div>
+      </aside>
+
+      <!-- RIGHT IMAGE -->
+      <div class="course-right-image">
+        <div class="course-video">
+          <img id="courseImage" src="./img/courses-details.webp" alt="" />
+        </div>
+      </div>
+    </div>
+
+    <!-- BOTTOM: Full-width details section -->
+    <section class="course-details-section">
+      <h2 class="course-title" id="courseTitle">Course Title</h2>
+
+      <div class="course-author">
+        <img src="./img/author-01.webp" />
+        <span id="courseAuthor">By Instructor</span>
+        <span class="students">28k Enrolled Students</span>
+        <span class="rating">★★★★★ (4.9)</span>
+      </div>
+
+      <!-- Content -->
+      <div class="course-text">
+        <h4>Description:</h4>
+        <p>
+          Lorem ipsum is simply dummy text of the printing and typesetting
+          industry. Lorem Ipsum has been the industry's standard dummy text ever
+          since the 1500s.
+        </p>
+
+        <h4>Curriculum:</h4>
+        <p>
+          Lorem ipsum is simply dummy text of the printing and typesetting
+          industry. It was popularised in the 1960s.
+        </p>
+
+        <h4>Certification:</h4>
+        <p>
+          Lorem ipsum is simply dummy text of the printing and typesetting
+          industry. It has survived not only five centuries.
+        </p>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <div class="footer-container">
+        <!-- Newsletter -->
+        <div class="footer-col newsletter">
+          <h3>Subscribe Newsletter</h3>
+          <p>
+            Lorem Ipsum has been them an<br />
+            industry printer took a galley make<br />
+            book.
+          </p>
+
+          <input type="email" placeholder="Enter email" />
+          <button>Subscribe Now</button>
+        </div>
+
+        <!-- Courses -->
+        <div class="footer-col">
+          <h3>All Courses</h3>
+          <ul>
+            <li>Daily Exercise</li>
+            <li>Find Your Balance</li>
+            <li>Personal Program</li>
+            <li>Natural Process</li>
+            <li>Immune System</li>
+            <li>Gives You Energy</li>
+          </ul>
+        </div>
+
+        <!-- Help Links -->
+        <div class="footer-col">
+          <h3>Help Links</h3>
+          <ul>
+            <li>Privacy Policy</li>
+            <li>Discussion</li>
+            <li>Terms & Conditions</li>
+            <li>Customer Support</li>
+            <li>Course FAQ’s</li>
+            <li>Online Classes</li>
+          </ul>
+        </div>
+
+        <!-- Opening Hours -->
+        <div class="footer-col">
+          <h3>Opening Hours</h3>
+          <ul class="hours">
+            <li>Mon-Fri: 9 AM – 6 PM</li>
+            <li>Saturday: 9 AM – 4 PM</li>
+            <li>Sunday: Closed</li>
+          </ul>
+
+          <h3 class="mt">Location</h3>
+          <p>
+            176 W street name, New<br />
+            York, NY 10014
+          </p>
+        </div>
+      </div>
+
+      <!-- Bottom Bar -->
+      <div class="footer-bottom">
+        <p>© 2026 <span>Nutras</span> Made with ❤ by Abdelwahab</p>
+        <div class="footer-links">
+          <a href="#">Terms of Service</a>
+          <a href="#">Privacy Policy</a>
+          <a href="#">Sitemap</a>
+          <a href="#">Security</a>
+        </div>
+      </div>
+    </footer>
+    <script src="js/utils.js"></script>
+    <script src="js/auth.js"></script>
+    <script src="js/coursedetails.js"></script>
+    <script>
+      // Function to enroll in course
+      async function enrollInCourse(event) {
+        event.preventDefault();
+
+        const userEmail = localStorage.getItem("userEmail");
+        if (!userEmail) {
+          showLoginModal("Please login first to enroll in courses");
+          return;
+        }
+
+        const courseDataStr = localStorage.getItem("selectedCourse");
+        if (!courseDataStr) {
+          showNotification(
+            "Course data not found. Please go back to courses page.",
+            "error",
+            3000
+          );
+          return;
+        }
+
+        const courseData = JSON.parse(courseDataStr);
+
+        try {
+          const response = await fetch("http://localhost:3000/user/enrolled", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({ email: userEmail, course: courseData }),
+          });
+
+          const result = await response.json();
+
+          if (response.ok) {
+            const enrollBtn = document.getElementById("enrollBtn");
+            if (enrollBtn) {
+              enrollBtn.textContent = "Enrolled ✓";
+              enrollBtn.style.background = "#4CAF50";
+              enrollBtn.onclick = null;
+            }
+            showNotification(
+              "Successfully enrolled in course!",
+              "success",
+              3000
+            );
+          } else {
+            if (
+              response.status === 400 &&
+              result.includes("already enrolled")
+            ) {
+              showNotification(
+                "You are already enrolled in this course!",
+                "warning",
+                3000
+              );
+            } else {
+              showNotification(
+                result || "Failed to enroll in course",
+                "error",
+                3000
+              );
+            }
+          }
+        } catch (error) {
+          console.error("Error enrolling in course:", error);
+          showNotification("Network error. Please try again.", "error", 3000);
+        }
+      }
+
+      document.addEventListener("DOMContentLoaded", async function () {
+        const userEmail = localStorage.getItem("userEmail");
+        if (!userEmail) return;
+
+        const courseDataStr = localStorage.getItem("selectedCourse");
+        if (courseDataStr) {
+          const courseData = JSON.parse(courseDataStr);
+
+          try {
+            const response = await fetch(
+              `http://localhost:3000/user/enrolled?email=${encodeURIComponent(
+                userEmail
+              )}`
+            );
+            if (response.ok) {
+              const enrolledCourses = await response.json();
+              const isEnrolled = enrolledCourses.some(
+                (course) => course.title === courseData.title
+              );
+
+              if (isEnrolled) {
+                const enrollBtn = document.getElementById("enrollBtn");
+                if (enrollBtn) {
+                  enrollBtn.textContent = "Enrolled ✓";
+                  enrollBtn.style.background = "#4CAF50";
+                  enrollBtn.onclick = null;
+                }
+              }
+            }
+          } catch (error) {
+            console.error("Error checking enrollment:", error);
+          }
+        }
+      });
+    </script>
+    <script src="./js/utils.js"></script>
+    <script src="./js/auth.js"></script>
+  </body>
+</html>

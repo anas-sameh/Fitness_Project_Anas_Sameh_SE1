@@ -1,0 +1,654 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>courses</title>
+    <link rel="stylesheet" href="./css/courses.css" />
+    <link rel="stylesheet" href="css/home.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    />
+  </head>
+  <style>
+    .favourite-btn {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      background: rgba(0, 0, 0, 0.5);
+      border: none;
+      border-radius: 50%;
+      width: 40px;
+      height: 40px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      z-index: 10;
+    }
+
+    .favourite-btn:hover {
+      background: rgba(0, 0, 0, 0.7);
+      transform: scale(1.1);
+    }
+
+    .favourite-btn .heart-icon {
+      font-size: 20px;
+      color: #fff;
+      transition: all 0.3s ease;
+    }
+
+    .favourite-btn.active .heart-icon {
+      color: #ff0000;
+    }
+
+    .course-img {
+      position: relative;
+    }
+  </style>
+  <body>
+    <nav class="navbar">
+      <div class="logo">
+        <img src="img/logo.webp" alt="logo" />
+      </div>
+
+      <ul class="nav-links">
+        <li><a href="home.html">Home</a></li>
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="courses.html" class="active">All Course</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+
+      <div class="nav-right">
+        <div class="nav-icons">
+          <a href="favourites.html" class="nav-icon" title="Favourites">
+            <i class="fas fa-heart"></i>
+          </a>
+          <a href="profile.html" class="nav-icon" title="Profile">
+            <i class="fas fa-user"></i>
+          </a>
+        </div>
+        <div class="nav-btn">
+          <a href="login.html">Login</a>
+        </div>
+      </div>
+    </nav>
+
+    <!-- HERO SECTION -->
+    <section class="hero">
+      <div class="hero-content">
+        <h1 style="user-select: none">Courses</h1>
+        <p>
+          <a href="#">Home</a> // <span style="user-select: none">Courses</span>
+        </p>
+      </div>
+        
+    </section>
+
+    <section class="courses">
+      <div class="courses-top">
+        <select id="categoryFilter">
+          <option value="all">All Categories</option>
+          <option value="Fitness">Fitness</option>
+          <option value="Nutrition">Nutrition</option>
+        </select>
+
+        <div class="search-box">
+          <input type="text" id="searchInput" placeholder="Search here" />
+          <button id="searchBtn">🔍</button>
+        </div>
+      </div>
+
+      <div class="courses-grid" id="coursesGrid">
+        <!-- CARD 1 -->
+        <div
+          class="course-card"
+          data-category="Nutrition"
+          data-title="Complete Nutrition Guide"
+          data-author="Dr. Sarah Johnson"
+          data-price="98"
+          data-duration="8"
+          data-lessons="50"
+          data-image="img/courses-1.webp"
+        >
+          <a
+            href="coursedetails.html"
+            class="course-link"
+            onclick="saveCourseData(event, this)"
+          >
+            <div class="course-img">
+              <img src="img/courses-1.webp" alt="Complete Nutrition Guide" />
+              <span class="price">$98</span>
+              <button
+                class="favourite-btn"
+                onclick="toggleFavourite(event, this)"
+                title="Add to favourites"
+              >
+                <span class="heart-icon">♡</span>
+              </button>
+            </div>
+          </a>
+          <div class="course-info">
+            <span class="author">By Dr. Sarah Johnson</span>
+            <h3>Complete Nutrition Guide</h3>
+            <div class="meta">
+              <span>Oct 20, 2020</span>
+              <span>8h</span>
+              <span>50 Lessons</span>
+            </div>
+          </div>
+        </div>
+        <!-- CARD 2 -->
+        <div
+          class="course-card"
+          data-category="Fitness"
+          data-title="Strength Training Fundamentals"
+          data-author="Mike Thompson"
+          data-price="89"
+          data-duration="12"
+          data-lessons="45"
+          data-image="img/courses-2.webp"
+        >
+          <a
+            href="coursedetails.html"
+            class="course-link"
+            onclick="saveCourseData(event, this)"
+          >
+            <div class="course-img">
+              <img
+                src="img/courses-2.webp"
+                alt="Strength Training Fundamentals"
+              />
+              <span class="price">$89</span>
+              <button
+                class="favourite-btn"
+                onclick="toggleFavourite(event, this)"
+                title="Add to favourites"
+              >
+                <span class="heart-icon">♡</span>
+              </button>
+            </div>
+          </a>
+          <div class="course-info">
+            <span class="author">By Mike Thompson</span>
+            <h3>Strength Training Fundamentals</h3>
+            <div class="meta">
+              <span>Nov 15, 2020</span>
+              <span>12h</span>
+              <span>45 Lessons</span>
+            </div>
+          </div>
+        </div>
+        <!-- CARD 3 -->
+        <div
+          class="course-card"
+          data-category="Fitness"
+          data-title="Cardio and Endurance Training"
+          data-author="Alex Martinez"
+          data-price="79"
+          data-duration="15"
+          data-lessons="60"
+          data-image="img/courses-3.webp"
+        >
+          <a
+            href="coursedetails.html"
+            class="course-link"
+            onclick="saveCourseData(event, this)"
+          >
+            <div class="course-img">
+              <img
+                src="img/courses-3.webp"
+                alt="Cardio and Endurance Training"
+              />
+              <span class="price">$79</span>
+              <button
+                class="favourite-btn"
+                onclick="toggleFavourite(event, this)"
+                title="Add to favourites"
+              >
+                <span class="heart-icon">♡</span>
+              </button>
+            </div>
+          </a>
+          <div class="course-info">
+            <span class="author">By Alex Martinez</span>
+            <h3>Cardio and Endurance Training</h3>
+            <div class="meta">
+              <span>Dec 1, 2020</span>
+              <span>15h</span>
+              <span>60 Lessons</span>
+            </div>
+          </div>
+        </div>
+        <!-- CARD 4 -->
+        <div
+          class="course-card"
+          data-category="Nutrition"
+          data-title="Weight Loss Nutrition Plan"
+          data-author="Dr. Emily Chen"
+          data-price="95"
+          data-duration="10"
+          data-lessons="40"
+          data-image="img/courses-4.webp"
+        >
+          <a
+            href="coursedetails.html"
+            class="course-link"
+            onclick="saveCourseData(event, this)"
+          >
+            <div class="course-img">
+              <img src="img/courses-4.webp" alt="Weight Loss Nutrition Plan" />
+              <span class="price">$95</span>
+              <button
+                class="favourite-btn"
+                onclick="toggleFavourite(event, this)"
+                title="Add to favourites"
+              >
+                <span class="heart-icon">♡</span>
+              </button>
+            </div>
+          </a>
+          <div class="course-info">
+            <span class="author">By Dr. Emily Chen</span>
+            <h3>Weight Loss Nutrition Plan</h3>
+            <div class="meta">
+              <span>Jan 10, 2021</span>
+              <span>10h</span>
+              <span>40 Lessons</span>
+            </div>
+          </div>
+        </div>
+        <!-- CARD 5 -->
+        <div
+          class="course-card"
+          data-category="Nutrition"
+          data-title="Healthy Meal Planning"
+          data-author="Nutritionist Lisa Brown"
+          data-price="120"
+          data-duration="20"
+          data-lessons="75"
+          data-image="img/courses-5.webp"
+        >
+          <a
+            href="coursedetails.html"
+            class="course-link"
+            onclick="saveCourseData(event, this)"
+          >
+            <div class="course-img">
+              <img src="img/courses-5.webp" alt="Healthy Meal Planning" />
+              <span class="price">$120</span>
+              <button
+                class="favourite-btn"
+                onclick="toggleFavourite(event, this)"
+                title="Add to favourites"
+              >
+                <span class="heart-icon">♡</span>
+              </button>
+            </div>
+          </a>
+          <div class="course-info">
+            <span class="author">By Nutritionist Lisa Brown</span>
+            <h3>Healthy Meal Planning</h3>
+            <div class="meta">
+              <span>Feb 5, 2021</span>
+              <span>20h</span>
+              <span>75 Lessons</span>
+            </div>
+          </div>
+        </div>
+        <!-- CARD 6 -->
+        <div
+          class="course-card"
+          data-category="Fitness"
+          data-title="HIIT Workout Program"
+          data-author="Trainer James Wilson"
+          data-price="105"
+          data-duration="18"
+          data-lessons="55"
+          data-image="img/courses-6.webp"
+        >
+          <a
+            href="coursedetails.html"
+            class="course-link"
+            onclick="saveCourseData(event, this)"
+          >
+            <div class="course-img">
+              <img src="img/courses-6.webp" alt="HIIT Workout Program" />
+              <span class="price">$105</span>
+              <button
+                class="favourite-btn"
+                onclick="toggleFavourite(event, this)"
+                title="Add to favourites"
+              >
+                <span class="heart-icon">♡</span>
+              </button>
+            </div>
+          </a>
+          <div class="course-info">
+            <span class="author">By Trainer James Wilson</span>
+            <h3>HIIT Workout Program</h3>
+            <div class="meta">
+              <span>Mar 12, 2021</span>
+              <span>18h</span>
+              <span>55 Lessons</span>
+            </div>
+          </div>
+        </div>
+        <!-- CARD 7 -->
+        <div
+          class="course-card"
+          data-category="Fitness"
+          data-title="Flexibility and Stretching"
+          data-author="Yoga Instructor Lisa Anderson"
+          data-price="65"
+          data-duration="6"
+          data-lessons="30"
+          data-image="img/courses-7.webp"
+        >
+          <a
+            href="coursedetails.html"
+            class="course-link"
+            onclick="saveCourseData(event, this)"
+          >
+            <div class="course-img">
+              <img src="img/courses-7.webp" alt="Flexibility and Stretching" />
+              <span class="price">$65</span>
+              <button
+                class="favourite-btn"
+                onclick="toggleFavourite(event, this)"
+                title="Add to favourites"
+              >
+                <span class="heart-icon">♡</span>
+              </button>
+            </div>
+          </a>
+          <div class="course-info">
+            <span class="author">By Yoga Instructor Lisa Anderson</span>
+            <h3>Flexibility and Stretching</h3>
+            <div class="meta">
+              <span>Apr 20, 2021</span>
+              <span>6h</span>
+              <span>30 Lessons</span>
+            </div>
+          </div>
+        </div>
+        <!-- CARD 8 -->
+        <div
+          class="course-card"
+          data-category="Nutrition"
+          data-title="Sports Nutrition Essentials"
+          data-author="Dr. James Wilson"
+          data-price="85"
+          data-duration="14"
+          data-lessons="50"
+          data-image="img/courses-8.webp"
+        >
+          <a
+            href="coursedetails.html"
+            class="course-link"
+            onclick="saveCourseData(event, this)"
+          >
+            <div class="course-img">
+              <img src="img/courses-8.webp" alt="Sports Nutrition Essentials" />
+              <span class="price">$85</span>
+              <button
+                class="favourite-btn"
+                onclick="toggleFavourite(event, this)"
+                title="Add to favourites"
+              >
+                <span class="heart-icon">♡</span>
+              </button>
+            </div>
+          </a>
+          <div class="course-info">
+            <span class="author">By Dr. James Wilson</span>
+            <h3>Sports Nutrition Essentials</h3>
+            <div class="meta">
+              <span>May 8, 2021</span>
+              <span>14h</span>
+              <span>50 Lessons</span>
+            </div>
+          </div>
+        </div>
+        <!-- CARD 9 -->
+        <div
+          class="course-card"
+          data-category="Fitness"
+          data-title="Bodybuilding and Muscle Growth"
+          data-author="Trainer Maria Garcia"
+          data-price="110"
+          data-duration="16"
+          data-lessons="65"
+          data-image="img/courses-9.webp"
+        >
+          <a
+            href="coursedetails.html"
+            class="course-link"
+            onclick="saveCourseData(event, this)"
+          >
+            <div class="course-img">
+              <img
+                src="img/courses-9.webp"
+                alt="Bodybuilding and Muscle Growth"
+              />
+              <span class="price">$110</span>
+              <button
+                class="favourite-btn"
+                onclick="toggleFavourite(event, this)"
+                title="Add to favourites"
+              >
+                <span class="heart-icon">♡</span>
+              </button>
+            </div>
+          </a>
+          <div class="course-info">
+            <span class="author">By Trainer Maria Garcia</span>
+            <h3>Bodybuilding and Muscle Growth</h3>
+            <div class="meta">
+              <span>Jun 15, 2021</span>
+              <span>16h</span>
+              <span>65 Lessons</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="pagination">
+        <a href="#">‹</a>
+        <a class="active" href="#">1</a>
+        <a href="#">2</a>
+        <a href="#">3</a>
+        <a href="#">›</a>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <div class="footer-container">
+        <!-- Newsletter -->
+        <div class="footer-col newsletter">
+          <h3>Subscribe Newsletter</h3>
+          <p>
+            Lorem Ipsum has been them an<br />
+            industry printer took a galley make<br />
+            book.
+          </p>
+
+          <input type="email" placeholder="Enter email" />
+          <button>Subscribe Now</button>
+        </div>
+
+        <!-- Courses -->
+        <div class="footer-col">
+          <h3>All Courses</h3>
+          <ul>
+            <li>Daily Exercise</li>
+            <li>Find Your Balance</li>
+            <li>Personal Program</li>
+            <li>Natural Process</li>
+            <li>Immune System</li>
+            <li>Gives You Energy</li>
+          </ul>
+        </div>
+
+        <!-- Help Links -->
+        <div class="footer-col">
+          <h3>Help Links</h3>
+          <ul>
+            <li>Privacy Policy</li>
+            <li>Discussion</li>
+            <li>Terms & Conditions</li>
+            <li>Customer Support</li>
+            <li>Course FAQ’s</li>
+            <li>Online Classes</li>
+          </ul>
+        </div>
+
+        <!-- Opening Hours -->
+        <div class="footer-col">
+          <h3>Opening Hours</h3>
+          <ul class="hours">
+            <li>Mon-Fri: 9 AM – 6 PM</li>
+            <li>Saturday: 9 AM – 4 PM</li>
+            <li>Sunday: Closed</li>
+          </ul>
+
+          <h3 class="mt">Location</h3>
+          <p>
+            176 W street name, New<br />
+            York, NY 10014
+          </p>
+        </div>
+      </div>
+
+      <!-- Bottom Bar -->
+      <div class="footer-bottom">
+        <p>© 2026 <span>Nutras</span> Made with ❤ by Abdelwahab</p>
+        <div class="footer-links">
+          <a href="#">Terms of Service</a>
+          <a href="#">Privacy Policy</a>
+          <a href="#">Sitemap</a>
+          <a href="#">Security</a>
+        </div>
+      </div>
+    </footer>
+    <script src="js/utils.js"></script>
+    <script src="js/auth.js"></script>
+    <script src="js/courses.js"></script>
+    <script>
+      // saveCourseData is now in utils.js
+
+      // Function to toggle favourite
+      async function toggleFavourite(event, btn) {
+        event.preventDefault();
+        event.stopPropagation();
+
+        // Check if user is logged in
+        const userEmail = localStorage.getItem("userEmail");
+        if (!userEmail) {
+          showLoginModal(
+            "Please login first to add courses to your favourites"
+          );
+          return;
+        }
+
+        const courseCard = btn.closest(".course-card");
+        const heartIcon = btn.querySelector(".heart-icon");
+
+        // Get course data
+        const courseData = {
+          title: courseCard.getAttribute("data-title"),
+          author: courseCard.getAttribute("data-author"),
+          price: courseCard.getAttribute("data-price"),
+          duration: courseCard.getAttribute("data-duration"),
+          lessons: courseCard.getAttribute("data-lessons"),
+          category: courseCard.getAttribute("data-category"),
+          image: courseCard.getAttribute("data-image"),
+        };
+
+        // Toggle favourite via API
+        try {
+          const response = await fetch(
+            "http://localhost:3000/user/favourites",
+            {
+              method: "POST",
+              headers: {
+                "Content-Type": "application/json",
+              },
+              body: JSON.stringify({
+                email: userEmail,
+                course: courseData,
+              }),
+            }
+          );
+
+          const result = await response.json();
+
+          if (response.ok) {
+            if (result.action === "added") {
+              heartIcon.textContent = "♥";
+              heartIcon.style.color = "#ff0000";
+              btn.classList.add("active");
+              showNotification("Course added to favourites", "success");
+            } else {
+              heartIcon.textContent = "♡";
+              heartIcon.style.color = "#fff";
+              btn.classList.remove("active");
+              showNotification("Course removed from favourites", "info");
+            }
+          } else {
+            showNotification(result || "Failed to update favourites", "error");
+          }
+        } catch (error) {
+          console.error("Error toggling favourite:", error);
+          showNotification("Network error. Please try again.", "error");
+        }
+      }
+
+      // Function to check and update favourite buttons on page load
+      async function updateFavouriteButtons() {
+        const userEmail = localStorage.getItem("userEmail");
+        if (!userEmail) return;
+
+        try {
+          const response = await fetch(
+            `http://localhost:3000/user/favourites?email=${encodeURIComponent(
+              userEmail
+            )}`
+          );
+          if (!response.ok) return;
+
+          const favourites = await response.json();
+          const courseCards = document.querySelectorAll(".course-card");
+
+          courseCards.forEach((card) => {
+            const title = card.getAttribute("data-title");
+            const isFavourite = favourites.some((fav) => fav.title === title);
+            const favouriteBtn = card.querySelector(".favourite-btn");
+
+            if (favouriteBtn) {
+              const heartIcon = favouriteBtn.querySelector(".heart-icon");
+              if (isFavourite) {
+                heartIcon.textContent = "♥";
+                heartIcon.style.color = "#ff0000";
+                favouriteBtn.classList.add("active");
+              } else {
+                heartIcon.textContent = "♡";
+                heartIcon.style.color = "#fff";
+                favouriteBtn.classList.remove("active");
+              }
+            }
+          });
+        } catch (error) {
+          console.error("Error loading favourites:", error);
+        }
+      }
+
+      // Update favourite buttons when page loads
+      document.addEventListener("DOMContentLoaded", updateFavouriteButtons);
+    </script>
+    <script src="./js/utils.js"></script>
+    <script src="./js/auth.js"></script>
+  </body>
+</html>
